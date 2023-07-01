@@ -1,0 +1,23 @@
+.heading{
+
+    background-color: #472183;
+    font-weight:900;
+    font-size: 55px;
+   
+font-family: 'Times New Roman', Times, serif;
+text-align: center;
+color: #F1F6F5;
+}
+
+.main{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    background-color: #4B56D2;
+    color:#F1F6F5;
+}
+.examples{
+font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #82C3EC;
+    color:#363737;
+}

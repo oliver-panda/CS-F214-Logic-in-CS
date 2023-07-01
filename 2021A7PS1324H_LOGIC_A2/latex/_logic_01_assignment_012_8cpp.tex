@@ -1,0 +1,269 @@
+\hypertarget{_logic_01_assignment_012_8cpp}{}\doxysection{Logic Assignment 2.cpp File Reference}
+\label{_logic_01_assignment_012_8cpp}\index{Logic Assignment 2.cpp@{Logic Assignment 2.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_logic_01_assignment_012_8cpp_a5977928b042d0a4b2ce93baa979e5f5c}{LIMIT}}~20
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_logic_01_assignment_012_8cpp_ae34df653b48d982461c3c8f1f0d64156}{Validity}} (char proof\mbox{[}\mbox{\hyperlink{_logic_01_assignment_012_8cpp_a5977928b042d0a4b2ce93baa979e5f5c}{LIMIT}}\mbox{]}\mbox{[}\mbox{\hyperlink{_logic_01_assignment_012_8cpp_a5977928b042d0a4b2ce93baa979e5f5c}{LIMIT}}\mbox{]}, char rule\mbox{[}\mbox{\hyperlink{_logic_01_assignment_012_8cpp_a5977928b042d0a4b2ce93baa979e5f5c}{LIMIT}}\mbox{]}\mbox{[}\mbox{\hyperlink{_logic_01_assignment_012_8cpp_a5977928b042d0a4b2ce93baa979e5f5c}{LIMIT}}\mbox{]}, int i)
+\item 
+int \mbox{\hyperlink{_logic_01_assignment_012_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_logic_01_assignment_012_8cpp_a5977928b042d0a4b2ce93baa979e5f5c}\label{_logic_01_assignment_012_8cpp_a5977928b042d0a4b2ce93baa979e5f5c}} 
+\index{Logic Assignment 2.cpp@{Logic Assignment 2.cpp}!LIMIT@{LIMIT}}
+\index{LIMIT@{LIMIT}!Logic Assignment 2.cpp@{Logic Assignment 2.cpp}}
+\doxysubsubsection{\texorpdfstring{LIMIT}{LIMIT}}
+{\footnotesize\ttfamily \#define LIMIT~20}
+
+
+
+Definition at line \mbox{\hyperlink{_logic_01_assignment_012_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{_logic_01_assignment_012_8cpp_source}{Logic Assignment 2.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_logic_01_assignment_012_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_logic_01_assignment_012_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Logic Assignment 2.cpp@{Logic Assignment 2.cpp}!main@{main}}
+\index{main@{main}!Logic Assignment 2.cpp@{Logic Assignment 2.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_logic_01_assignment_012_8cpp_source_l00164}{164}} of file \mbox{\hyperlink{_logic_01_assignment_012_8cpp_source}{Logic Assignment 2.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00164           \{}
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{00166     \textcolor{keywordtype}{int} n,t;}
+\DoxyCodeLine{00167     cin>>n;}
+\DoxyCodeLine{00168 }
+\DoxyCodeLine{00169     \textcolor{keywordtype}{char} proof[n][\mbox{\hyperlink{_logic_01_assignment_012_8cpp_a5977928b042d0a4b2ce93baa979e5f5c}{LIMIT}}],rule[n][\mbox{\hyperlink{_logic_01_assignment_012_8cpp_a5977928b042d0a4b2ce93baa979e5f5c}{LIMIT}}];}
+\DoxyCodeLine{00170     \textcolor{keywordtype}{int} control=1;}
+\DoxyCodeLine{00171     \textcolor{keywordflow}{if}(n!=0)\{}
+\DoxyCodeLine{00172     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; i++)}
+\DoxyCodeLine{00173     \{}
+\DoxyCodeLine{00174         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0;  ; j++)}
+\DoxyCodeLine{00175         \{}
+\DoxyCodeLine{00176             cin>>proof[i][j];}
+\DoxyCodeLine{00177             \textcolor{keywordflow}{if}(proof[i][j]==\textcolor{charliteral}{'/'})\{}
+\DoxyCodeLine{00178             proof[i][j]=\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00179             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00180             \}}
+\DoxyCodeLine{00181         \}}
+\DoxyCodeLine{00182         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; ; j++)}
+\DoxyCodeLine{00183         \{}
+\DoxyCodeLine{00184             cin>>rule[i][j];}
+\DoxyCodeLine{00185             \textcolor{keywordflow}{if}(std::cin.peek() == \textcolor{charliteral}{'\(\backslash\)n'})\{}
+\DoxyCodeLine{00186             rule[i][j+1]=\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00187             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00188             \}}
+\DoxyCodeLine{00189         \}}
+\DoxyCodeLine{00190         \textcolor{keywordflow}{if} ((\mbox{\hyperlink{_logic_01_assignment_012_8cpp_ae34df653b48d982461c3c8f1f0d64156}{Validity}}(proof,rule,i)==1) \&\& (rule[i][0]!=\textcolor{charliteral}{'\(\backslash\)0'}))}
+\DoxyCodeLine{00191         \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00192         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00193             control= 0;}
+\DoxyCodeLine{00194             \}}
+\DoxyCodeLine{00195         \}}
+\DoxyCodeLine{00196     \}}
+\DoxyCodeLine{00197     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00198     control=0;}
+\DoxyCodeLine{00199 }
+\DoxyCodeLine{00200     \textcolor{keywordflow}{if}(control)}
+\DoxyCodeLine{00201     cout<<\textcolor{stringliteral}{"{}Valid"{}}<<endl;}
+\DoxyCodeLine{00202     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00203     cout<<\textcolor{stringliteral}{"{}Invalid"{}}<<endl;\}}
+\DoxyCodeLine{00204     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00205 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_logic_01_assignment_012_8cpp_source_l00005}{LIMIT}}, and \mbox{\hyperlink{_logic_01_assignment_012_8cpp_source_l00007}{Validity()}}.
+
+\mbox{\Hypertarget{_logic_01_assignment_012_8cpp_ae34df653b48d982461c3c8f1f0d64156}\label{_logic_01_assignment_012_8cpp_ae34df653b48d982461c3c8f1f0d64156}} 
+\index{Logic Assignment 2.cpp@{Logic Assignment 2.cpp}!Validity@{Validity}}
+\index{Validity@{Validity}!Logic Assignment 2.cpp@{Logic Assignment 2.cpp}}
+\doxysubsubsection{\texorpdfstring{Validity()}{Validity()}}
+{\footnotesize\ttfamily int Validity (\begin{DoxyParamCaption}\item[{char}]{proof\mbox{[}\+LIMIT\mbox{]}\mbox{[}\+LIMIT\mbox{]},  }\item[{char}]{rule\mbox{[}\+LIMIT\mbox{]}\mbox{[}\+LIMIT\mbox{]},  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_logic_01_assignment_012_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{_logic_01_assignment_012_8cpp_source}{Logic Assignment 2.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007                                                                     \{}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009     \textcolor{comment}{//Premise}}
+\DoxyCodeLine{00010     \textcolor{keywordflow}{if}(rule[i][0]==\textcolor{charliteral}{'P'})\{}
+\DoxyCodeLine{00011         \textcolor{keywordtype}{int} control=1; \textcolor{comment}{// for checking whether formula is valid or not, 0 if invalid}}
+\DoxyCodeLine{00012         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; proof[i][j+1] !=\textcolor{charliteral}{'\(\backslash\)0'}; j++)\{}
+\DoxyCodeLine{00013             \textcolor{keywordflow}{if}((65<=proof[i][j] \&\& proof[i][j]<=90) || (97<=proof[i][j] \&\& proof[i][j]<=122) || (proof[i][j]==\textcolor{charliteral}{'>'}) || (proof[i][j]==\textcolor{charliteral}{'*'}) || (proof[i][j]==\textcolor{charliteral}{'+'}) || (proof[i][j]==\textcolor{charliteral}{'\string~'}) || (proof[i][j]==\textcolor{charliteral}{'('}) || (proof[i][j]==\textcolor{charliteral}{')'}))}
+\DoxyCodeLine{00014                 \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00015             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00016                 control= 0;}
+\DoxyCodeLine{00017                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00018             \}              }
+\DoxyCodeLine{00019         \}}
+\DoxyCodeLine{00020         \textcolor{keywordflow}{return} control;}
+\DoxyCodeLine{00021     \}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     \textcolor{comment}{//AND Introduction}}
+\DoxyCodeLine{00024     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rule[i][0]==\textcolor{charliteral}{'*'}\&\&rule[i][1]==\textcolor{charliteral}{'i'} \&\& rule[i][2]==\textcolor{charliteral}{'/'} \&\& rule[i][4]==\textcolor{charliteral}{'/'} \&\& (rule[i][3]-\/49<i) \&\& (rule[i][5]-\/49<i))\{}
+\DoxyCodeLine{00025         \textcolor{keywordtype}{char} str1[\mbox{\hyperlink{_logic_01_assignment_012_8cpp_a5977928b042d0a4b2ce93baa979e5f5c}{LIMIT}}] = \{\textcolor{charliteral}{'\(\backslash\)0'}\};}
+\DoxyCodeLine{00026         strcat(str1,\textcolor{stringliteral}{"{}("{}});}
+\DoxyCodeLine{00027         strcat(str1,proof[rule[i][3]-\/49]);}
+\DoxyCodeLine{00028         strcat(str1,\textcolor{stringliteral}{"{}*"{}});}
+\DoxyCodeLine{00029         strcat(str1,proof[(\textcolor{keywordtype}{int})rule[i][5]-\/49]);}
+\DoxyCodeLine{00030         strcat(str1,\textcolor{stringliteral}{"{})"{}});}
+\DoxyCodeLine{00031         \textcolor{keywordflow}{if}(strcmp(str1,proof[i])==0)}
+\DoxyCodeLine{00032         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{00033         \textcolor{keywordflow}{else} }
+\DoxyCodeLine{00034         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00035     \}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037     \textcolor{comment}{//AND Elmn 1}}
+\DoxyCodeLine{00038     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rule[i][0]==\textcolor{charliteral}{'*'}\&\&rule[i][1]==\textcolor{charliteral}{'e'} \&\& rule[i][2]==\textcolor{charliteral}{'1'} \&\& rule[i][3]==\textcolor{charliteral}{'/'} \&\& (rule[i][4]-\/49<i))\{}
+\DoxyCodeLine{00039         \textcolor{keywordtype}{char} str2[\mbox{\hyperlink{_logic_01_assignment_012_8cpp_a5977928b042d0a4b2ce93baa979e5f5c}{LIMIT}}] = \{\textcolor{charliteral}{'\(\backslash\)0'}\};}
+\DoxyCodeLine{00040         \textcolor{keywordtype}{int} t =1;}
+\DoxyCodeLine{00041         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 1;  ; j++)}
+\DoxyCodeLine{00042         \{}
+\DoxyCodeLine{00043             \textcolor{keywordflow}{if}(t==1)\{}
+\DoxyCodeLine{00044                 \textcolor{keywordflow}{if}(proof[rule[i][4]-\/49][j]==\textcolor{charliteral}{'*'})}
+\DoxyCodeLine{00045                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00046             \}}
+\DoxyCodeLine{00047             \textcolor{keywordflow}{if}(1)\{}
+\DoxyCodeLine{00048             str2[j-\/1]=proof[rule[i][4]-\/49][j];}
+\DoxyCodeLine{00049             \}}
+\DoxyCodeLine{00050             \textcolor{keywordflow}{if}(proof[rule[i][4]-\/49][j]==\textcolor{charliteral}{'('})}
+\DoxyCodeLine{00051             t++;}
+\DoxyCodeLine{00052             \textcolor{keywordflow}{if}(proof[rule[i][4]-\/49][j]==\textcolor{charliteral}{')'})}
+\DoxyCodeLine{00053             t-\/-\/;}
+\DoxyCodeLine{00054         \}}
+\DoxyCodeLine{00055         \textcolor{keywordflow}{if}(strcmp(str2,proof[i])==0)}
+\DoxyCodeLine{00056         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{00057         \textcolor{keywordflow}{else} }
+\DoxyCodeLine{00058         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00059     \}}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061     \textcolor{comment}{//AND Elmn 2}}
+\DoxyCodeLine{00062     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rule[i][0]==\textcolor{charliteral}{'*'}\&\&rule[i][1]==\textcolor{charliteral}{'e'} \&\& rule[i][2]==\textcolor{charliteral}{'2'} \&\& rule[i][3]==\textcolor{charliteral}{'/'} \&\& (rule[i][4]-\/49<i))\{}
+\DoxyCodeLine{00063         \textcolor{keywordtype}{char} str2[\mbox{\hyperlink{_logic_01_assignment_012_8cpp_a5977928b042d0a4b2ce93baa979e5f5c}{LIMIT}}] = \{\textcolor{charliteral}{'\(\backslash\)0'}\};}
+\DoxyCodeLine{00064         \textcolor{keywordtype}{int} t =0,control=0,pos=0;}
+\DoxyCodeLine{00065         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0;  ; j++)}
+\DoxyCodeLine{00066         \{}
+\DoxyCodeLine{00067             \textcolor{keywordflow}{if}(t==1)\{}
+\DoxyCodeLine{00068                 \textcolor{keywordflow}{if}(proof[rule[i][4]-\/49][j]==\textcolor{charliteral}{'*'})\{}
+\DoxyCodeLine{00069                     control=1;}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071                 \}}
+\DoxyCodeLine{00072             \}}
+\DoxyCodeLine{00073             \textcolor{keywordflow}{if}(t==1)\{}
+\DoxyCodeLine{00074                 \textcolor{keywordflow}{if} (proof[rule[i][4]-\/49][j+1]==\textcolor{charliteral}{')'})}
+\DoxyCodeLine{00075                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00076             \}}
+\DoxyCodeLine{00077             \textcolor{keywordflow}{if}(control)\{}
+\DoxyCodeLine{00078                 }
+\DoxyCodeLine{00079                 str2[pos]=proof[rule[i][4]-\/49][j+1];}
+\DoxyCodeLine{00080                 pos++;}
+\DoxyCodeLine{00081             \}}
+\DoxyCodeLine{00082             \textcolor{keywordflow}{if}(proof[rule[i][4]-\/49][j]==\textcolor{charliteral}{'('})}
+\DoxyCodeLine{00083             t++;}
+\DoxyCodeLine{00084             \textcolor{keywordflow}{if}(proof[rule[i][4]-\/49][j+1]==\textcolor{charliteral}{')'})}
+\DoxyCodeLine{00085             t-\/-\/;}
+\DoxyCodeLine{00086         \}   }
+\DoxyCodeLine{00087         \textcolor{keywordflow}{if}(strcmp(str2,proof[i])==0)}
+\DoxyCodeLine{00088         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{00089         \textcolor{keywordflow}{else} }
+\DoxyCodeLine{00090         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00091     \}}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093     \textcolor{comment}{//OR Introduction 1}}
+\DoxyCodeLine{00094     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rule[i][0]==\textcolor{charliteral}{'+'}\&\&rule[i][1]==\textcolor{charliteral}{'i'} \&\& rule[i][2]==\textcolor{charliteral}{'1'} \&\& rule[i][3]==\textcolor{charliteral}{'/'} \&\& (rule[i][4]-\/49<i))\{}
+\DoxyCodeLine{00095         \textcolor{keywordtype}{char} str2[\mbox{\hyperlink{_logic_01_assignment_012_8cpp_a5977928b042d0a4b2ce93baa979e5f5c}{LIMIT}}] = \{\textcolor{charliteral}{'\(\backslash\)0'}\};}
+\DoxyCodeLine{00096         strcat(str2,\textcolor{stringliteral}{"{}("{}});}
+\DoxyCodeLine{00097         strcat(str2,proof[rule[i][4]-\/49]);}
+\DoxyCodeLine{00098         \textcolor{keywordflow}{if}(strncmp(str2,proof[i],strlen(str2))==0)}
+\DoxyCodeLine{00099         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{00100         \textcolor{keywordflow}{else} }
+\DoxyCodeLine{00101         \textcolor{keywordflow}{return} 0;;}
+\DoxyCodeLine{00102     \}}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104     \textcolor{comment}{//OR Introduction 2}}
+\DoxyCodeLine{00105     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rule[i][0]==\textcolor{charliteral}{'+'}\&\&rule[i][1]==\textcolor{charliteral}{'i'} \&\& rule[i][2]==\textcolor{charliteral}{'2'} \&\& rule[i][3]==\textcolor{charliteral}{'/'} \&\& (rule[i][4]-\/49<i))\{}
+\DoxyCodeLine{00106         \textcolor{keywordtype}{char} str2[\mbox{\hyperlink{_logic_01_assignment_012_8cpp_a5977928b042d0a4b2ce93baa979e5f5c}{LIMIT}}] = \{\textcolor{charliteral}{'\(\backslash\)0'}\};}
+\DoxyCodeLine{00107         \textcolor{keywordtype}{int} pos=strlen(proof[rule[i][4]-\/49]);}
+\DoxyCodeLine{00108         \textcolor{keywordtype}{int} control=1;}
+\DoxyCodeLine{00109         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = strlen(proof[i]), k=strlen(proof[rule[i][4]-\/49]); k<pos ; j-\/-\/,k-\/-\/)}
+\DoxyCodeLine{00110         \{}
+\DoxyCodeLine{00111             \textcolor{keywordflow}{if}(proof[i][j-\/2]!=proof[rule[i][4]-\/49][k])}
+\DoxyCodeLine{00112             control=0;}
+\DoxyCodeLine{00113         \}}
+\DoxyCodeLine{00114         \textcolor{keywordflow}{return} control;}
+\DoxyCodeLine{00115     \}}
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{00117     \textcolor{comment}{//Implication Elimination}}
+\DoxyCodeLine{00118     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rule[i][0]==\textcolor{charliteral}{'>'}\&\&rule[i][1]==\textcolor{charliteral}{'e'} \&\& rule[i][2]==\textcolor{charliteral}{'/'} \&\& rule[i][4]==\textcolor{charliteral}{'/'} \&\& (rule[i][3]-\/49<i) \&\& (rule[i][5]-\/49<i))\{}
+\DoxyCodeLine{00119         \textcolor{keywordtype}{int} control=1,count=0;}
+\DoxyCodeLine{00120         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j <strlen(proof[rule[i][5]-\/49]) ; j++)\{}
+\DoxyCodeLine{00121         \{}
+\DoxyCodeLine{00122             \textcolor{keywordflow}{if}(proof[rule[i][5]-\/49][j]!=proof[rule[i][3]-\/49][j+1])\{}
+\DoxyCodeLine{00123             control=0;}
+\DoxyCodeLine{00124             \}}
+\DoxyCodeLine{00125         \}}
+\DoxyCodeLine{00126         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = strlen(proof[rule[i][3]-\/49]),k=strlen(proof[i]); k >0 ; j-\/-\/,k-\/-\/)}
+\DoxyCodeLine{00127         \{}
+\DoxyCodeLine{00128             \textcolor{keywordflow}{if}(proof[i][k-\/1]!=proof[rule[i][3]-\/49][j-\/2])\{}
+\DoxyCodeLine{00129             control=0;}
+\DoxyCodeLine{00130             \}}
+\DoxyCodeLine{00131         \}}
+\DoxyCodeLine{00132         \}}
+\DoxyCodeLine{00133         \textcolor{keywordflow}{return} control;}
+\DoxyCodeLine{00134     \}}
+\DoxyCodeLine{00135 }
+\DoxyCodeLine{00136     \textcolor{comment}{//Modus Tollens}}
+\DoxyCodeLine{00137     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rule[i][0]==\textcolor{charliteral}{'M'}\&\&rule[i][1]==\textcolor{charliteral}{'T'} \&\& rule[i][2]==\textcolor{charliteral}{'/'} \&\& rule[i][4]==\textcolor{charliteral}{'/'} \&\& (rule[i][3]-\/49<i) \&\& (rule[i][5]-\/49<i) \&\& (proof[rule[i][5]-\/49][0]==\textcolor{charliteral}{'\string~'}) )\{  }
+\DoxyCodeLine{00138         \textcolor{keywordtype}{int} control=1;}
+\DoxyCodeLine{00139         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = strlen(proof[rule[i][5]-\/49]),k=strlen(proof[rule[i][3]-\/49]); j > 1; j-\/-\/,k-\/-\/)}
+\DoxyCodeLine{00140         \{}
+\DoxyCodeLine{00141             \textcolor{keywordflow}{if}(proof[rule[i][5]-\/49][j-\/1] != proof[rule[i][3]-\/49][k-\/2])\{}
+\DoxyCodeLine{00142                 control=0;}
+\DoxyCodeLine{00143             \}}
+\DoxyCodeLine{00144         \}}
+\DoxyCodeLine{00145         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < strlen(proof[i]); j++)}
+\DoxyCodeLine{00146         \{}
+\DoxyCodeLine{00147             \textcolor{keywordflow}{if}(j==0)\{}
+\DoxyCodeLine{00148                 \textcolor{keywordflow}{if}(proof[i][j] != \textcolor{charliteral}{'\string~'})\{}
+\DoxyCodeLine{00149                 control=0;}
+\DoxyCodeLine{00150             \}}
+\DoxyCodeLine{00151         \}}
+\DoxyCodeLine{00152         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(proof[i][j] !=proof[rule[i][3]-\/49][j])\{}
+\DoxyCodeLine{00153         control=0;}
+\DoxyCodeLine{00154         \}}
+\DoxyCodeLine{00155         \}}
+\DoxyCodeLine{00156       \textcolor{keywordflow}{return} control;}
+\DoxyCodeLine{00157     \}}
+\DoxyCodeLine{00158     }
+\DoxyCodeLine{00159     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00160     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00161 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_logic_01_assignment_012_8cpp_source_l00005}{LIMIT}}.
+
+
+
+Referenced by \mbox{\hyperlink{_logic_01_assignment_012_8cpp_source_l00164}{main()}}.
+
